@@ -1,0 +1,122 @@
+[
+  {
+    "id": "674217cf8d8f",
+    "name": "Notion",
+    "category": "Productivity",
+    "original_price": 16.0,
+    "deal_price": 0.0,
+    "discount_percent": 100.0,
+    "deal_type": "Free Trial",
+    "affiliate_url": "https://notion.so?ref=saasscout-20",
+    "description": "All-in-one workspace for notes, docs, and project management.",
+    "discovered_at": "2026-10-27T21:08:25.956403+00:00"
+  },
+  {
+    "id": "82404c6b500b",
+    "name": "Fathom Analytics",
+    "category": "Analytics",
+    "original_price": 14.0,
+    "deal_price": 0.0,
+    "discount_percent": 100.0,
+    "deal_type": "Free Trial",
+    "affiliate_url": "https://usefathom.com?ref=saasscout-20",
+    "description": "Privacy-first, GDPR-compliant website analytics.",
+    "discovered_at": "2026-10-27T21:08:25.956460+00:00"
+  },
+  {
+    "id": "c4710570a5e6",
+    "name": "Plausible Analytics",
+    "category": "Analytics",
+    "original_price": 9.0,
+    "deal_price": 0.0,
+    "discount_percent": 100.0,
+    "deal_type": "Free Trial",
+    "affiliate_url": "https://plausible.io?ref=saasscout-20",
+    "description": "Lightweight, open-source web analytics.",
+    "discovered_at": "2026-10-27T21:08:25.956470+00:00"
+  },
+  {
+    "id": "4936f06afb6b",
+    "name": "Huly",
+    "category": "Productivity",
+    "original_price": 12.0,
+    "deal_price": 0.0,
+    "discount_percent": 100.0,
+    "deal_type": "Free Trial",
+    "affiliate_url": "https://huly.io?ref=saasscout-20",
+    "description": "Open-source project management and team collaboration.",
+    "discovered_at": "2026-10-27T21:08:25.956508+00:00"
+  },
+  {
+    "id": "7d637e33bb63",
+    "name": "Supabase",
+    "category": "DevTools",
+    "original_price": 25.0,
+    "deal_price": 0.0,
+    "discount_percent": 100.0,
+    "deal_type": "Free Trial",
+    "affiliate_url": "https://supabase.com?ref=saasscout-20",
+    "description": "Open-source Firebase alternative with Postgres backend.",
+    "discovered_at": "2026-10-27T21:08:25.956528+00:00"
+  },
+  {
+    "id": "035a04e6609e",
+    "name": "Ahrefs",
+    "category": "Marketing",
+    "original_price": 99.0,
+    "deal_price": 7.0,
+    "discount_percent": 92.9,
+    "deal_type": "Annual Discount",
+    "affiliate_url": "https://ahrefs.com?ref=saasscout-20",
+    "description": "SEO toolset for backlinks, keyword research, and site audits.",
+    "discovered_at": "2026-10-27T21:08:25.956435+00:00"
+  },
+  {
+    "id": "7b5586af9a37",
+    "name": "Pika",
+    "category": "AI",
+    "original_price": 35.0,
+    "deal_price": 8.0,
+    "discount_percent": 77.1,
+    "deal_type": "Annual Discount",
+    "affiliate_url": "https://pika.art?ref=saasscout-20",
+    "description": "AI video generation from text and images.",
+    "discovered_at": "2026-10-27T21:08:25.956518+00:00"
+  },
+  {
+    "id": "ac00a3698cca",
+    "name": "Writesonic",
+    "category": "AI",
+    "original_price": 49.0,
+    "deal_price": 15.0,
+    "discount_percent": 69.4,
+    "deal_type": "Annual Discount",
+    "affiliate_url": "https://writesonic.com?ref=saasscout-20",
+    "description": "AI writing assistant for blogs, ads, and landing pages.",
+    "discovered_at": "2026-10-27T21:08:25.956489+00:00"
+  },
+  {
+    "id": "fc23ead17229",
+    "name": "Supercreator AI",
+    "category": "AI",
+    "original_price": 49.0,
+    "deal_price": 29.0,
+    "discount_percent": 40.8,
+    "deal_type": "Lifetime Deal",
+    "affiliate_url": "https://supercreator.ai?ref=saasscout-20",
+    "description": "AI-powered short video creation and scripting tool.",
+    "discovered_at": "2026-10-27T21:08:25.956480+00:00"
+  },
+  {
+    "id": "bf46db67a764",
+    "name": "Screaming Frog SEO Spider",
+    "category": "Marketing",
+    "original_price": 259.0,
+    "deal_price": 199.0,
+    "discount_percent": 23.2,
+    "deal_type": "Annual Discount",
+    "affiliate_url": "https://screamingfrog.co.uk/seo-spider?ref=saasscout-20",
+    "description": "Desktop crawler for technical SEO analysis.",
+    "discovered_at": "2026-10-27T21:08:25.956449+00:00"
+  }
+]
