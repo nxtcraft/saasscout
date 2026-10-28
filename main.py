@@ -6,7 +6,7 @@ from typing import Optional
 
 from fastapi import FastAPI, Query, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
-from fastapi.responses import HTMLResponse
+from fastapi.responses import HTMLResponse, PlainTextResponse
 from pydantic import BaseModel
 
 DATA_FILE = Path(__file__).parent / "data" / "latest_deals.json"
@@ -146,7 +146,31 @@ def _render_homepage(deals: list[dict]) -> str:
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://saasscout.onrender.com">
 <link rel="canonical" href="https://saasscout.onrender.com">
-<script type="application/ld+json">{{"@context":"https://schema.org","@type":"WebSite","name":"SaasScout","url":"https://saasscout.onrender.com","description":"SaaS lifetime deals and price drop tracker. Updated daily."}}</script>
+<script type="application/ld+json">
+{{
+  "@context": "https://schema.org",
+  "@graph": [
+    {{
+      "@type": "WebSite",
+      "name": "SaasScout",
+      "url": "https://saasscout.onrender.com",
+      "description": "SaaS lifetime deals and price drop tracker. Updated daily.",
+      "potentialAction": {{
+        "@type": "SearchAction",
+        "target": "https://saasscout.onrender.com/v1/search?q={{search_term_string}}",
+        "query-input": "required name=search_term_string"
+      }}
+    }},
+    {{
+      "@type": "ItemList",
+      "name": "SaaS Lifetime Deals",
+      "description": "Curated list of {total} SaaS deals, lifetime offers and price drops updated daily.",
+      "numberOfItems": {total},
+      "itemListElement": [{",".join(f'{{"@type":"ListItem","position":{i+1},"name":"{d["name"]}","description":"{d["description"][:100].replace(chr(34), "")}","url":"{d["affiliate_url"]}"}}' for i,d in enumerate(deals[:20]))}]
+    }}
+  ]
+}}
+</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
@@ -275,6 +299,33 @@ document.getElementById('search').addEventListener('input',e=>{{q=e.target.value
 def homepage():
     deals = _load_deals()
     return HTMLResponse(_render_homepage(deals))
+
+
+@app.get("/robots.txt", response_class=PlainTextResponse, include_in_schema=False)
+def robots():
+    return """User-agent: *
+Allow: /
+Sitemap: https://saasscout.onrender.com/sitemap.xml
+"""
+
+
+@app.get("/sitemap.xml", include_in_schema=False)
+def sitemap():
+    deals = _load_deals()
+    urls = [
+        "<url><loc>https://saasscout.onrender.com/</loc><changefreq>daily</changefreq><priority>1.0</priority></url>",
+        "<url><loc>https://saasscout.onrender.com/docs</loc><changefreq>weekly</changefreq><priority>0.5</priority></url>",
+    ]
+    for d in deals:
+        urls.append(
+            f"<url><loc>https://saasscout.onrender.com/v1/deals/{d['id']}</loc>"
+            f"<changefreq>daily</changefreq><priority>0.8</priority></url>"
+        )
+    xml = '<?xml version="1.0" encoding="UTF-8"?>\n'
+    xml += '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'
+    xml += "\n".join(urls)
+    xml += "\n</urlset>"
+    return HTMLResponse(content=xml, media_type="application/xml")
 
 
 @app.get("/health", tags=["System"])
