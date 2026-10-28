@@ -1,0 +1,82 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "SaasScout - SaaS Deals and Lifetime Deal Tracker",
+    "description": "Real-time SaaS deals, lifetime offers & price drops. Filter by category, discount %, deal type. Updated daily.",
+    "version": "1.1.0"
+  },
+  "servers": [
+    {
+      "url": "https://saasscout.onrender.com"
+    }
+  ],
+  "paths": {
+    "/v1/deals": {
+      "get": {
+        "summary": "List Deals",
+        "description": "Paginated list of SaaS deals with optional filters.",
+        "operationId": "listDeals",
+        "parameters": [
+          {"name": "category", "in": "query", "schema": {"type": "string"}, "description": "AI | Marketing | DevTools | Productivity | Analytics | Design | Security | Finance"},
+          {"name": "deal_type", "in": "query", "schema": {"type": "string"}, "description": "ltd | discount | free_trial"},
+          {"name": "max_price", "in": "query", "schema": {"type": "number"}, "description": "Max deal price in USD"},
+          {"name": "min_discount", "in": "query", "schema": {"type": "number"}, "description": "Minimum discount percentage"},
+          {"name": "q", "in": "query", "schema": {"type": "string"}, "description": "Keyword search"},
+          {"name": "page", "in": "query", "schema": {"type": "integer", "default": 1}},
+          {"name": "per_page", "in": "query", "schema": {"type": "integer", "default": 20}}
+        ],
+        "responses": {
+          "200": {"description": "Paginated deals response"}
+        }
+      }
+    },
+    "/v1/deals/top": {
+      "get": {
+        "summary": "Top Deals by Discount",
+        "description": "Returns top N deals sorted by highest discount percentage.",
+        "operationId": "topDeals",
+        "parameters": [
+          {"name": "n", "in": "query", "schema": {"type": "integer", "default": 10}, "description": "Number of top deals"},
+          {"name": "deal_type", "in": "query", "schema": {"type": "string"}, "description": "ltd | discount | free_trial"}
+        ],
+        "responses": {
+          "200": {"description": "List of top deals"}
+        }
+      }
+    },
+    "/v1/search": {
+      "get": {
+        "summary": "Search Deals",
+        "description": "Keyword search across deal names and descriptions.",
+        "operationId": "searchDeals",
+        "parameters": [
+          {"name": "q", "in": "query", "required": true, "schema": {"type": "string"}, "description": "Search keyword"},
+          {"name": "limit", "in": "query", "schema": {"type": "integer", "default": 20}}
+        ],
+        "responses": {
+          "200": {"description": "Matching deals"}
+        }
+      }
+    },
+    "/v1/categories": {
+      "get": {
+        "summary": "List Categories",
+        "description": "Category summary with deal counts and type breakdown.",
+        "operationId": "listCategories",
+        "responses": {
+          "200": {"description": "Category summary"}
+        }
+      }
+    },
+    "/health": {
+      "get": {
+        "summary": "Health Check",
+        "description": "System status and total deal count.",
+        "operationId": "health",
+        "responses": {
+          "200": {"description": "System status"}
+        }
+      }
+    }
+  }
+}

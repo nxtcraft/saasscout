@@ -4,8 +4,10 @@ import json
 from pathlib import Path
 from typing import Optional
 
-from fastapi import FastAPI, Query, HTTPException
+from fastapi import FastAPI, Query, HTTPException, Request
 from fastapi.middleware.cors import CORSMiddleware
+from fastapi.responses import HTMLResponse
+from fastapi.templating import Jinja2Templates
 from pydantic import BaseModel
 
 DATA_FILE = Path(__file__).parent / "data" / "latest_deals.json"
@@ -29,6 +31,8 @@ app.add_middleware(
     allow_methods=["GET"],
     allow_headers=["*"],
 )
+
+templates = Jinja2Templates(directory=Path(__file__).parent / "templates")
 
 DEAL_TYPE_MAP = {
     "ltd": "Lifetime Deal",
@@ -101,6 +105,18 @@ def _filter(
 # ---------------------------------------------------------------------------
 # Endpoints
 # ---------------------------------------------------------------------------
+
+@app.get("/", response_class=HTMLResponse, include_in_schema=False)
+def homepage(request: Request):
+    deals = _load_deals()
+    categories = sorted(set(d["category"] for d in deals))
+    return templates.TemplateResponse("index.html", {
+        "request": request,
+        "deals": deals,
+        "total": len(deals),
+        "categories": categories,
+    })
+
 
 @app.get("/health", tags=["System"])
 def health():
