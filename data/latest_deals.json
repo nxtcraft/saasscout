@@ -10,7 +10,7 @@
     "affiliate_url": "https://copy.ai?ref=saasscout-20",
     "description": "AI copywriting tool for social, ads, and long-form content.",
     "source": "seed",
-    "discovered_at": "2026-10-29T03:32:45.100316+00:00"
+    "discovered_at": "2026-10-30T03:35:10.334518+00:00"
   },
   {
     "id": "43e2df380aa2",
@@ -23,7 +23,7 @@
     "affiliate_url": "https://runwayml.com?ref=saasscout-20",
     "description": "AI video editing, generation, and VFX tools.",
     "source": "seed",
-    "discovered_at": "2026-10-29T03:32:45.100353+00:00"
+    "discovered_at": "2026-10-30T03:35:10.334571+00:00"
   },
   {
     "id": "aa9fb92fe7df",
@@ -36,7 +36,7 @@
     "affiliate_url": "https://elevenlabs.io?ref=saasscout-20",
     "description": "Ultra-realistic AI voice cloning and synthesis.",
     "source": "seed",
-    "discovered_at": "2026-10-29T03:32:45.100359+00:00"
+    "discovered_at": "2026-10-30T03:35:10.334578+00:00"
   },
   {
     "id": "3983852f6daa",
@@ -49,7 +49,7 @@
     "affiliate_url": "https://synthesia.io?ref=saasscout-20",
     "description": "Create AI avatar videos without cameras or crews.",
     "source": "seed",
-    "discovered_at": "2026-10-29T03:32:45.100365+00:00"
+    "discovered_at": "2026-10-30T03:35:10.334585+00:00"
   },
   {
     "id": "52eabbb1e7b2",
@@ -62,7 +62,7 @@
     "affiliate_url": "https://mailchimp.com?ref=saasscout-20",
     "description": "Email marketing and automation for small businesses.",
     "source": "seed",
-    "discovered_at": "2026-10-29T03:32:45.100390+00:00"
+    "discovered_at": "2026-10-30T03:35:10.334615+00:00"
   },
   {
     "id": "5d494898593f",
@@ -75,7 +75,7 @@
     "affiliate_url": "https://convertkit.com?ref=saasscout-20",
     "description": "Email platform for creators with powerful automation.",
     "source": "seed",
-    "discovered_at": "2026-10-29T03:32:45.100396+00:00"
+    "discovered_at": "2026-10-30T03:35:10.334622+00:00"
   },
   {
     "id": "ebf9a80eb6cb",
@@ -88,7 +88,7 @@
     "affiliate_url": "https://beehiiv.com?ref=saasscout-20",
     "description": "Newsletter platform built for growth with ad network.",
     "source": "seed",
-    "discovered_at": "2026-10-29T03:32:45.100402+00:00"
+    "discovered_at": "2026-10-30T03:35:10.334630+00:00"
   },
   {
     "id": "7d637e33bb63",
@@ -101,7 +101,7 @@
     "affiliate_url": "https://supabase.com?ref=saasscout-20",
     "description": "Open-source Firebase alternative with Postgres backend.",
     "source": "seed",
-    "discovered_at": "2026-10-29T03:32:45.100424+00:00"
+    "discovered_at": "2026-10-30T03:35:10.334659+00:00"
   },
   {
     "id": "7291b7aedb3e",
@@ -114,7 +114,7 @@
     "affiliate_url": "https://render.com?ref=saasscout-20",
     "description": "Cloud hosting for web services, static sites, and databases.",
     "source": "seed",
-    "discovered_at": "2026-10-29T03:32:45.100435+00:00"
+    "discovered_at": "2026-10-30T03:35:10.334674+00:00"
   },
   {
     "id": "818b62049639",
@@ -127,7 +127,7 @@
     "affiliate_url": "https://planetscale.com?ref=saasscout-20",
     "description": "Serverless MySQL platform with branching workflow.",
     "source": "seed",
-    "discovered_at": "2026-10-29T03:32:45.100440+00:00"
+    "discovered_at": "2026-10-30T03:35:10.334681+00:00"
   },
   {
     "id": "349c3447df2b",
@@ -140,7 +140,7 @@
     "affiliate_url": "https://neon.tech?ref=saasscout-20",
     "description": "Serverless Postgres with branching for development.",
     "source": "seed",
-    "discovered_at": "2026-10-29T03:32:45.100445+00:00"
+    "discovered_at": "2026-10-30T03:35:10.334688+00:00"
   },
   {
     "id": "90e9074fda1b",
@@ -153,7 +153,7 @@
     "affiliate_url": "https://retool.com?ref=saasscout-20",
     "description": "Low-code platform for building internal tools fast.",
     "source": "seed",
-    "discovered_at": "2026-10-29T03:32:45.100450+00:00"
+    "discovered_at": "2026-10-30T03:35:10.334695+00:00"
   },
   {
     "id": "75f7e4c24256",
@@ -166,7 +166,7 @@
     "affiliate_url": "https://appwrite.io?ref=saasscout-20",
     "description": "Open-source backend platform for web and mobile apps.",
     "source": "seed",
-    "discovered_at": "2026-10-29T03:32:45.100456+00:00"
+    "discovered_at": "2026-10-30T03:35:10.334702+00:00"
   },
   {
     "id": "674217cf8d8f",
@@ -179,7 +179,7 @@
     "affiliate_url": "https://notion.so?ref=saasscout-20",
     "description": "All-in-one workspace for notes, docs, and project management.",
     "source": "seed",
-    "discovered_at": "2026-10-29T03:32:45.100472+00:00"
+    "discovered_at": "2026-10-30T03:35:10.334724+00:00"
   },
   {
     "id": "72968406a423",
@@ -192,7 +192,7 @@
     "affiliate_url": "https://coda.io?ref=saasscout-20",
     "description": "Docs that think like apps \u2014 combine data and narrative.",
     "source": "seed",
-    "discovered_at": "2026-10-29T03:32:45.100477+00:00"
+    "discovered_at": "2026-10-30T03:35:10.334732+00:00"
   },
   {
     "id": "47506cffacb3",
@@ -205,7 +205,7 @@
     "affiliate_url": "https://clickup.com?ref=saasscout-20",
     "description": "All-in-one project management and productivity platform.",
     "source": "seed",
-    "discovered_at": "2026-10-29T03:32:45.100482+00:00"
+    "discovered_at": "2026-10-30T03:35:10.334739+00:00"
   },
   {
     "id": "49c01324bb12",
@@ -218,7 +218,7 @@
     "affiliate_url": "https://linear.app?ref=saasscout-20",
     "description": "Fast, modern issue tracker for software teams.",
     "source": "seed",
-    "discovered_at": "2026-10-29T03:32:45.100488+00:00"
+    "discovered_at": "2026-10-30T03:35:10.334746+00:00"
   },
   {
     "id": "4936f06afb6b",
@@ -231,7 +231,7 @@
     "affiliate_url": "https://huly.io?ref=saasscout-20",
     "description": "Open-source all-in-one project and team management.",
     "source": "seed",
-    "discovered_at": "2026-10-29T03:32:45.100516+00:00"
+    "discovered_at": "2026-10-30T03:35:10.334753+00:00"
   },
   {
     "id": "a4cbe79bc139",
@@ -244,7 +244,7 @@
     "affiliate_url": "https://todoist.com?ref=saasscout-20",
     "description": "Task manager and to-do list for busy professionals.",
     "source": "seed",
-    "discovered_at": "2026-10-29T03:32:45.100527+00:00"
+    "discovered_at": "2026-10-30T03:35:10.334760+00:00"
   },
   {
     "id": "7ec884d1f166",
@@ -257,7 +257,7 @@
     "affiliate_url": "https://tana.inc?ref=saasscout-20",
     "description": "Supertag-based outliner for knowledge management.",
     "source": "seed",
-    "discovered_at": "2026-10-29T03:32:45.100546+00:00"
+    "discovered_at": "2026-10-30T03:35:10.334775+00:00"
   },
   {
     "id": "82404c6b500b",
@@ -270,7 +270,7 @@
     "affiliate_url": "https://usefathom.com?ref=saasscout-20",
     "description": "Privacy-first, GDPR-compliant website analytics.",
     "source": "seed",
-    "discovered_at": "2026-10-29T03:32:45.100552+00:00"
+    "discovered_at": "2026-10-30T03:35:10.334782+00:00"
   },
   {
     "id": "c4710570a5e6",
@@ -283,7 +283,7 @@
     "affiliate_url": "https://plausible.io?ref=saasscout-20",
     "description": "Lightweight, open-source privacy-focused web analytics.",
     "source": "seed",
-    "discovered_at": "2026-10-29T03:32:45.100557+00:00"
+    "discovered_at": "2026-10-30T03:35:10.334789+00:00"
   },
   {
     "id": "b7f7aa476146",
@@ -296,7 +296,7 @@
     "affiliate_url": "https://hotjar.com?ref=saasscout-20",
     "description": "Heatmaps, session recordings, and user surveys.",
     "source": "seed",
-    "discovered_at": "2026-10-29T03:32:45.100568+00:00"
+    "discovered_at": "2026-10-30T03:35:10.334803+00:00"
   },
   {
     "id": "2506dda97b6b",
@@ -309,7 +309,7 @@
     "affiliate_url": "https://mixpanel.com?ref=saasscout-20",
     "description": "Event-based product analytics for growth teams.",
     "source": "seed",
-    "discovered_at": "2026-10-29T03:32:45.100579+00:00"
+    "discovered_at": "2026-10-30T03:35:10.334818+00:00"
   },
   {
     "id": "6b764b53731f",
@@ -322,7 +322,7 @@
     "affiliate_url": "https://canva.com?ref=saasscout-20",
     "description": "Drag-and-drop graphic design for non-designers.",
     "source": "seed",
-    "discovered_at": "2026-10-29T03:32:45.100584+00:00"
+    "discovered_at": "2026-10-30T03:35:10.334826+00:00"
   },
   {
     "id": "1113f2a5c971",
@@ -335,7 +335,7 @@
     "affiliate_url": "https://framer.com?ref=saasscout-20",
     "description": "Design and publish high-performance websites visually.",
     "source": "seed",
-    "discovered_at": "2026-10-29T03:32:45.100589+00:00"
+    "discovered_at": "2026-10-30T03:35:10.334833+00:00"
   },
   {
     "id": "56e6f59d97e2",
@@ -348,7 +348,7 @@
     "affiliate_url": "https://loom.com?ref=saasscout-20",
     "description": "Async video messaging for teams and client walkthroughs.",
     "source": "seed",
-    "discovered_at": "2026-10-29T03:32:45.100594+00:00"
+    "discovered_at": "2026-10-30T03:35:10.334840+00:00"
   },
   {
     "id": "01172ea8fb15",
@@ -361,7 +361,7 @@
     "affiliate_url": "https://1password.com?ref=saasscout-20",
     "description": "Password manager and secure vault for teams.",
     "source": "seed",
-    "discovered_at": "2026-10-29T03:32:45.100604+00:00"
+    "discovered_at": "2026-10-30T03:35:10.334855+00:00"
   },
   {
     "id": "590d30e17c3a",
@@ -374,7 +374,7 @@
     "affiliate_url": "https://bitwarden.com?ref=saasscout-20",
     "description": "Open-source password manager with end-to-end encryption.",
     "source": "seed",
-    "discovered_at": "2026-10-29T03:32:45.100610+00:00"
+    "discovered_at": "2026-10-30T03:35:10.334862+00:00"
   },
   {
     "id": "ade511cdaf47",
@@ -387,7 +387,7 @@
     "affiliate_url": "https://invoiceninja.com?ref=saasscout-20",
     "description": "Open-source invoicing, billing, and time-tracking.",
     "source": "seed",
-    "discovered_at": "2026-10-29T03:32:45.100631+00:00"
+    "discovered_at": "2026-10-30T03:35:10.334889+00:00"
   },
   {
     "id": "7b5586af9a37",
@@ -400,7 +400,7 @@
     "affiliate_url": "https://pika.art?ref=saasscout-20",
     "description": "AI video generation from text and images.",
     "source": "seed",
-    "discovered_at": "2026-10-29T03:32:45.100348+00:00"
+    "discovered_at": "2026-10-30T03:35:10.334563+00:00"
   },
   {
     "id": "9c574dd574d3",
@@ -413,7 +413,7 @@
     "affiliate_url": "https://railway.app?ref=saasscout-20",
     "description": "Deploy apps and databases instantly from GitHub.",
     "source": "seed",
-    "discovered_at": "2026-10-29T03:32:45.100429+00:00"
+    "discovered_at": "2026-10-30T03:35:10.334667+00:00"
   },
   {
     "id": "ac00a3698cca",
@@ -426,7 +426,7 @@
     "affiliate_url": "https://writesonic.com?ref=saasscout-20",
     "description": "AI writing assistant for blogs, ads, emails, and landing pages.",
     "source": "seed",
-    "discovered_at": "2026-10-29T03:32:45.100281+00:00"
+    "discovered_at": "2026-10-30T03:35:10.334477+00:00"
   },
   {
     "id": "c539691de5d0",
@@ -439,7 +439,7 @@
     "affiliate_url": "https://nordvpn.com?ref=saasscout-20",
     "description": "Fast, secure VPN with 5500+ servers in 60 countries.",
     "source": "seed",
-    "discovered_at": "2026-10-29T03:32:45.100615+00:00"
+    "discovered_at": "2026-10-30T03:35:10.334869+00:00"
   },
   {
     "id": "9dddb4ff9eb0",
@@ -452,7 +452,7 @@
     "affiliate_url": "https://instantly.ai?ref=saasscout-20",
     "description": "AI cold email outreach with unlimited sending accounts.",
     "source": "seed",
-    "discovered_at": "2026-10-29T03:32:45.100419+00:00"
+    "discovered_at": "2026-10-30T03:35:10.334652+00:00"
   },
   {
     "id": "661b4bc89294",
@@ -465,7 +465,7 @@
     "affiliate_url": "https://murf.ai?ref=saasscout-20",
     "description": "Studio-quality AI voice generator with 120+ voices.",
     "source": "seed",
-    "discovered_at": "2026-10-29T03:32:45.100335+00:00"
+    "discovered_at": "2026-10-30T03:35:10.334545+00:00"
   },
   {
     "id": "6f9a23a168fc",
@@ -478,7 +478,7 @@
     "affiliate_url": "https://pictory.ai?ref=saasscout-20",
     "description": "Turn blog posts and scripts into short branded videos.",
     "source": "seed",
-    "discovered_at": "2026-10-29T03:32:45.100330+00:00"
+    "discovered_at": "2026-10-30T03:35:10.334536+00:00"
   },
   {
     "id": "4f25ef16e343",
@@ -491,7 +491,7 @@
     "affiliate_url": "https://descript.com?ref=saasscout-20",
     "description": "AI video and podcast editor with overdub voice cloning.",
     "source": "seed",
-    "discovered_at": "2026-10-29T03:32:45.100342+00:00"
+    "discovered_at": "2026-10-30T03:35:10.334554+00:00"
   },
   {
     "id": "b429b3519194",
@@ -504,7 +504,7 @@
     "affiliate_url": "https://obsidian.md?ref=saasscout-20",
     "description": "Private, local-first markdown note-taking with plugins.",
     "source": "seed",
-    "discovered_at": "2026-10-29T03:32:45.100536+00:00"
+    "discovered_at": "2026-10-30T03:35:10.334768+00:00"
   },
   {
     "id": "fc23ead17229",
@@ -517,7 +517,7 @@
     "affiliate_url": "https://supercreator.ai?ref=saasscout-20",
     "description": "AI-powered short video scripting and creation.",
     "source": "seed",
-    "discovered_at": "2026-10-29T03:32:45.100323+00:00"
+    "discovered_at": "2026-10-30T03:35:10.334528+00:00"
   },
   {
     "id": "6fd1c6d7e23a",
@@ -530,7 +530,7 @@
     "affiliate_url": "https://uploadcare.com?ref=saasscout-20",
     "description": "File upload and CDN delivery infrastructure for apps.",
     "source": "seed",
-    "discovered_at": "2026-10-29T03:32:45.100466+00:00"
+    "discovered_at": "2026-10-30T03:35:10.334717+00:00"
   },
   {
     "id": "72c2d8320a79",
@@ -543,7 +543,7 @@
     "affiliate_url": "https://lemlist.com?ref=saasscout-20",
     "description": "Cold email and LinkedIn outreach automation.",
     "source": "seed",
-    "discovered_at": "2026-10-29T03:32:45.100414+00:00"
+    "discovered_at": "2026-10-30T03:35:10.334644+00:00"
   },
   {
     "id": "ab5b94e16c5d",
@@ -556,7 +556,7 @@
     "affiliate_url": "https://cleanshot.com?ref=saasscout-20",
     "description": "Screenshot and screen recording app for Mac.",
     "source": "seed",
-    "discovered_at": "2026-10-29T03:32:45.100599+00:00"
+    "discovered_at": "2026-10-30T03:35:10.334848+00:00"
   },
   {
     "id": "8d71e2ab5b9f",
@@ -569,7 +569,7 @@
     "affiliate_url": "https://jasper.ai?ref=saasscout-20",
     "description": "AI content platform for marketing teams.",
     "source": "seed",
-    "discovered_at": "2026-10-29T03:32:45.100306+00:00"
+    "discovered_at": "2026-10-30T03:35:10.334506+00:00"
   },
   {
     "id": "e5b618511337",
@@ -582,7 +582,7 @@
     "affiliate_url": "https://surferseo.com?ref=saasscout-20",
     "description": "AI-powered on-page SEO optimisation and content scoring.",
     "source": "seed",
-    "discovered_at": "2026-10-29T03:32:45.100384+00:00"
+    "discovered_at": "2026-10-30T03:35:10.334608+00:00"
   },
   {
     "id": "bc893048a2a1",
@@ -595,7 +595,7 @@
     "affiliate_url": "https://hunter.io?ref=saasscout-20",
     "description": "Find and verify professional email addresses at scale.",
     "source": "seed",
-    "discovered_at": "2026-10-29T03:32:45.100408+00:00"
+    "discovered_at": "2026-10-30T03:35:10.334637+00:00"
   },
   {
     "id": "822c4b3ce63b",
@@ -608,7 +608,7 @@
     "affiliate_url": "https://semrush.com?ref=saasscout-20",
     "description": "SEO, PPC, content, and competitive research platform.",
     "source": "seed",
-    "discovered_at": "2026-10-29T03:32:45.100378+00:00"
+    "discovered_at": "2026-10-30T03:35:10.334601+00:00"
   },
   {
     "id": "035a04e6609e",
@@ -621,7 +621,7 @@
     "affiliate_url": "https://ahrefs.com?ref=saasscout-20",
     "description": "All-in-one SEO toolset: backlinks, keywords, site audits.",
     "source": "seed",
-    "discovered_at": "2026-10-29T03:32:45.100372+00:00"
+    "discovered_at": "2026-10-30T03:35:10.334593+00:00"
   },
   {
     "id": "52fd13f0d26f",
@@ -634,7 +634,7 @@
     "affiliate_url": "https://doppler.com?ref=saasscout-20",
     "description": "Universal secrets manager for environment variables.",
     "source": "seed",
-    "discovered_at": "2026-10-29T03:32:45.100461+00:00"
+    "discovered_at": "2026-10-30T03:35:10.334709+00:00"
   },
   {
     "id": "3d001376d416",
@@ -647,7 +647,7 @@
     "affiliate_url": "https://heap.io?ref=saasscout-20",
     "description": "Auto-capture every user interaction for product analytics.",
     "source": "seed",
-    "discovered_at": "2026-10-29T03:32:45.100563+00:00"
+    "discovered_at": "2026-10-30T03:35:10.334796+00:00"
   },
   {
     "id": "9003e95f67e3",
@@ -660,7 +660,7 @@
     "affiliate_url": "https://posthog.com?ref=saasscout-20",
     "description": "Open-source product analytics and feature flags.",
     "source": "seed",
-    "discovered_at": "2026-10-29T03:32:45.100573+00:00"
+    "discovered_at": "2026-10-30T03:35:10.334811+00:00"
   },
   {
     "id": "00da490eef4c",
@@ -673,7 +673,7 @@
     "affiliate_url": "https://lemonsqueezy.com?ref=saasscout-20",
     "description": "Merchant of record for SaaS \u2014 handles tax, billing, payouts.",
     "source": "seed",
-    "discovered_at": "2026-10-29T03:32:45.100620+00:00"
+    "discovered_at": "2026-10-30T03:35:10.334876+00:00"
   },
   {
     "id": "c3075e6a024a",
@@ -686,6 +686,6 @@
     "affiliate_url": "https://paddle.com?ref=saasscout-20",
     "description": "Subscription billing and revenue management for B2B SaaS.",
     "source": "seed",
-    "discovered_at": "2026-10-29T03:32:45.100626+00:00"
+    "discovered_at": "2026-10-30T03:35:10.334882+00:00"
   }
 ]
