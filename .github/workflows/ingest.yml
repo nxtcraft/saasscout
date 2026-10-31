@@ -2,15 +2,26 @@ name: Daily Deal Ingestion
 
 on:
   schedule:
-    - cron: "0 0 * * *"   # midnight UTC every day
-  workflow_dispatch:        # allow manual trigger
+    - cron: "0 0 * * *"
+  workflow_dispatch:
 
 permissions:
   contents: write
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
 
 jobs:
-  ingest:
+  ingest-and-deploy:
     runs-on: ubuntu-latest
+
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
@@ -33,6 +44,9 @@ jobs:
       - name: Run tests
         run: pytest test_pipeline.py -v
 
+      - name: Build static site
+        run: python build_site.py
+
       - name: Commit fresh deal data
         uses: stefanzweifel/git-auto-commit-action@v5
         with:
@@ -40,3 +54,12 @@ jobs:
           file_pattern: "data/latest_deals.json"
           commit_user_name: "SaasScout Bot"
           commit_user_email: "bot@saasscout.dev"
+
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: dist/
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
