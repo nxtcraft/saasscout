@@ -215,74 +215,52 @@ def _fetch_dealify(client: httpx.Client) -> list[dict]:
 # ---------------------------------------------------------------------------
 
 SEED_CATALOGUE = [
-    # AI Tools
-    ("Writesonic", "AI", 49.0, 16.0, "Annual Discount", "https://writesonic.com", "AI writing assistant for blogs, ads, emails, and landing pages."),
-    ("Jasper AI", "AI", 59.0, 39.0, "Annual Discount", "https://jasper.ai", "AI content platform for marketing teams."),
-    ("Copy.ai", "AI", 49.0, 0.0, "Free Trial", "https://copy.ai", "AI copywriting tool for social, ads, and long-form content."),
-    ("Supercreator AI", "AI", 49.0, 29.0, "Lifetime Deal", "https://supercreator.ai", "AI-powered short video scripting and creation."),
-    ("Pictory", "AI", 99.0, 49.0, "Annual Discount", "https://pictory.ai", "Turn blog posts and scripts into short branded videos."),
-    ("Murf AI", "AI", 39.0, 19.0, "Annual Discount", "https://murf.ai", "Studio-quality AI voice generator with 120+ voices."),
-    ("Descript", "AI", 24.0, 12.0, "Annual Discount", "https://descript.com", "AI video and podcast editor with overdub voice cloning."),
-    ("Pika", "AI", 35.0, 8.0, "Annual Discount", "https://pika.art", "AI video generation from text and images."),
-    ("Runway ML", "AI", 15.0, 0.0, "Free Trial", "https://runwayml.com", "AI video editing, generation, and VFX tools."),
-    ("ElevenLabs", "AI", 22.0, 0.0, "Free Trial", "https://elevenlabs.io", "Ultra-realistic AI voice cloning and synthesis."),
-    ("Synthesia", "AI", 30.0, 0.0, "Free Trial", "https://synthesia.io", "Create AI avatar videos without cameras or crews."),
+    # ── Lifetime Deals (real LTDs with one-time price) ──────────────────────
+    ("Cleanshot X", "Design", 59.0, 29.0, "Lifetime Deal", "https://cleanshot.com", "Screenshot, screen recording, and annotation app for Mac. One-time purchase, lifetime updates."),
+    ("Supercreator AI", "AI", 199.0, 69.0, "Lifetime Deal", "https://supercreator.ai", "AI short-video scripting tool. Generates hooks, scripts, and captions for TikTok/Reels."),
+    ("Screenpipe", "Productivity", 99.0, 49.0, "Lifetime Deal", "https://screenpi.pe", "Local-first screen and audio recorder with AI search — find anything you've seen on screen."),
+    ("SocialBee", "Marketing", 828.0, 99.0, "Lifetime Deal", "https://socialbee.com", "Social media scheduling with AI-powered content categories and recycling. AppSumo LTD."),
+    ("Writecream", "AI", 588.0, 49.0, "Lifetime Deal", "https://writecream.com", "AI content generator for blogs, cold emails, LinkedIn, and voiceovers. AppSumo LTD."),
+    ("Taplio", "Marketing", 588.0, 99.0, "Lifetime Deal", "https://taplio.com", "LinkedIn content and growth tool with AI post generator and CRM. Lifetime AppSumo deal."),
+    ("MeetGeek", "Productivity", 576.0, 79.0, "Lifetime Deal", "https://meetgeek.ai", "AI meeting recorder that auto-transcribes, summarises, and extracts action items."),
+    ("Formaloo", "Productivity", 588.0, 69.0, "Lifetime Deal", "https://formaloo.com", "No-code form builder and CRM with portals, quizzes, and automations. AppSumo LTD."),
+    ("Sendster", "Marketing", 588.0, 59.0, "Lifetime Deal", "https://sendster.com", "Self-hosted email marketing platform — unlimited subscribers, no monthly fees."),
+    ("Pabbly Connect", "Productivity", 1188.0, 249.0, "Lifetime Deal", "https://pabbly.com/connect", "Automation platform connecting 1000+ apps. One-time price, unlimited workflows."),
+    ("TidyCal", "Productivity", 576.0, 29.0, "Lifetime Deal", "https://tidycal.com", "Simple appointment booking tool by AppSumo. One-time $29, unlimited bookings forever."),
+    ("Hostinger Website Builder", "DevTools", 299.0, 69.0, "Lifetime Deal", "https://hostinger.com", "AI website builder with built-in hosting — create a professional site in minutes."),
+    ("Coupler.io", "Analytics", 588.0, 89.0, "Lifetime Deal", "https://coupler.io", "No-code data integration platform pulling data from APIs into Google Sheets, Looker Studio."),
+    ("SerpApi", "DevTools", 588.0, 79.0, "Lifetime Deal", "https://serpapi.com", "Real-time Google Search API for scraping SERPs — lifetime deal via AppSumo."),
+    ("Uxcel", "Design", 299.0, 49.0, "Lifetime Deal", "https://uxcel.com", "UX design skills platform with interactive courses, challenges, and assessments."),
+    ("Landbot", "Marketing", 588.0, 89.0, "Lifetime Deal", "https://landbot.io", "No-code chatbot builder for landing pages, WhatsApp, and web — past AppSumo LTD."),
+    ("Mailmodo", "Marketing", 1188.0, 119.0, "Lifetime Deal", "https://mailmodo.com", "AMP email marketing platform — send interactive emails with forms, carts, and widgets."),
+    ("Scalenut", "AI", 588.0, 79.0, "Lifetime Deal", "https://scalenut.com", "AI SEO content platform: keyword research, briefs, writing, and optimization in one."),
+    ("Jasper (LTD era)", "AI", 588.0, 49.0, "Lifetime Deal", "https://jasper.ai", "AI writing assistant for long-form blogs and marketing copy — early LTD cohort pricing."),
+    ("Dyluno", "Analytics", 299.0, 49.0, "Lifetime Deal", "https://dyluno.com", "Heatmaps, session recordings, and conversion analytics. Lifetime deal via AppSumo."),
 
-    # Marketing
-    ("Ahrefs", "Marketing", 129.0, 99.0, "Annual Discount", "https://ahrefs.com", "All-in-one SEO toolset: backlinks, keywords, site audits."),
-    ("Semrush", "Marketing", 139.95, 99.95, "Annual Discount", "https://semrush.com", "SEO, PPC, content, and competitive research platform."),
-    ("Surfer SEO", "Marketing", 89.0, 59.0, "Annual Discount", "https://surferseo.com", "AI-powered on-page SEO optimisation and content scoring."),
-    ("Mailchimp", "Marketing", 20.0, 0.0, "Free Trial", "https://mailchimp.com", "Email marketing and automation for small businesses."),
-    ("ConvertKit", "Marketing", 29.0, 0.0, "Free Trial", "https://convertkit.com", "Email platform for creators with powerful automation."),
-    ("Beehiiv", "Marketing", 42.0, 0.0, "Free Trial", "https://beehiiv.com", "Newsletter platform built for growth with ad network."),
-    ("Hunter.io", "Marketing", 49.0, 34.0, "Annual Discount", "https://hunter.io", "Find and verify professional email addresses at scale."),
-    ("Lemlist", "Marketing", 99.0, 59.0, "Annual Discount", "https://lemlist.com", "Cold email and LinkedIn outreach automation."),
-    ("Instantly", "Marketing", 97.0, 37.0, "Annual Discount", "https://instantly.ai", "AI cold email outreach with unlimited sending accounts."),
+    # ── Annual Discounts (real percentage-off deals) ─────────────────────────
+    ("Ahrefs", "Marketing", 129.0, 99.0, "Annual Discount", "https://ahrefs.com", "All-in-one SEO toolset: backlinks, keywords, content explorer, and site audits."),
+    ("Semrush", "Marketing", 139.95, 99.95, "Annual Discount", "https://semrush.com", "SEO, PPC, content marketing, and competitor research platform."),
+    ("Surfer SEO", "Marketing", 89.0, 59.0, "Annual Discount", "https://surferseo.com", "AI-powered on-page SEO scoring and content optimization tool."),
+    ("Writesonic", "AI", 99.0, 16.0, "Annual Discount", "https://writesonic.com", "AI writing platform for blogs, ads, and landing pages. 84% off annual plan."),
+    ("Jasper AI", "AI", 59.0, 39.0, "Annual Discount", "https://jasper.ai", "AI content platform for marketing teams — 33% off annual billing."),
+    ("Pictory", "AI", 99.0, 49.0, "Annual Discount", "https://pictory.ai", "Turn blog posts and scripts into short branded videos. 50% off annual."),
+    ("Murf AI", "AI", 39.0, 19.0, "Annual Discount", "https://murf.ai", "Studio-quality AI voice generator with 120+ voices and 20 languages."),
+    ("Descript", "AI", 24.0, 12.0, "Annual Discount", "https://descript.com", "AI video and podcast editor with overdub voice cloning. 50% off annual."),
+    ("Hunter.io", "Marketing", 49.0, 34.0, "Annual Discount", "https://hunter.io", "Find and verify professional email addresses — 30% off annual plan."),
+    ("Lemlist", "Marketing", 99.0, 59.0, "Annual Discount", "https://lemlist.com", "Cold email and LinkedIn outreach automation — 40% off annual plan."),
+    ("Instantly", "Marketing", 97.0, 37.0, "Annual Discount", "https://instantly.ai", "AI cold email outreach with unlimited sending accounts — 62% off annual."),
+    ("Uploadcare", "DevTools", 49.0, 29.0, "Annual Discount", "https://uploadcare.com", "File upload, transformation, and CDN delivery — 41% off annual plan."),
+    ("Obsidian", "Productivity", 8.0, 4.0, "Annual Discount", "https://obsidian.md", "Private, local-first markdown note-taking with plugin ecosystem."),
+    ("NordVPN", "Security", 11.99, 3.99, "Annual Discount", "https://nordvpn.com", "Fast, secure VPN — 67% off 2-year plan with 5500+ servers in 60 countries."),
+    ("Railway", "DevTools", 20.0, 5.0, "Annual Discount", "https://railway.app", "Deploy apps and databases instantly from GitHub — 75% off annual."),
 
-    # DevTools
-    ("Supabase", "DevTools", 25.0, 0.0, "Free Trial", "https://supabase.com", "Open-source Firebase alternative with Postgres backend."),
-    ("Railway", "DevTools", 20.0, 5.0, "Annual Discount", "https://railway.app", "Deploy apps and databases instantly from GitHub."),
-    ("Render", "DevTools", 25.0, 0.0, "Free Trial", "https://render.com", "Cloud hosting for web services, static sites, and databases."),
-    ("PlanetScale", "DevTools", 29.0, 0.0, "Free Trial", "https://planetscale.com", "Serverless MySQL platform with branching workflow."),
-    ("Neon", "DevTools", 19.0, 0.0, "Free Trial", "https://neon.tech", "Serverless Postgres with branching for development."),
-    ("Retool", "DevTools", 10.0, 0.0, "Free Trial", "https://retool.com", "Low-code platform for building internal tools fast."),
-    ("Appwrite", "DevTools", 15.0, 0.0, "Free Trial", "https://appwrite.io", "Open-source backend platform for web and mobile apps."),
-    ("Doppler", "DevTools", 0.0, 0.0, "Free Trial", "https://doppler.com", "Universal secrets manager for environment variables."),
-    ("Uploadcare", "DevTools", 49.0, 29.0, "Annual Discount", "https://uploadcare.com", "File upload and CDN delivery infrastructure for apps."),
-
-    # Productivity
-    ("Notion", "Productivity", 16.0, 0.0, "Free Trial", "https://notion.so", "All-in-one workspace for notes, docs, and project management."),
-    ("Coda", "Productivity", 12.0, 0.0, "Free Trial", "https://coda.io", "Docs that think like apps — combine data and narrative."),
-    ("ClickUp", "Productivity", 12.0, 0.0, "Free Trial", "https://clickup.com", "All-in-one project management and productivity platform."),
-    ("Linear", "Productivity", 8.0, 0.0, "Free Trial", "https://linear.app", "Fast, modern issue tracker for software teams."),
-    ("Huly", "Productivity", 12.0, 0.0, "Free Trial", "https://huly.io", "Open-source all-in-one project and team management."),
-    ("Todoist", "Productivity", 8.0, 0.0, "Free Trial", "https://todoist.com", "Task manager and to-do list for busy professionals."),
-    ("Obsidian", "Productivity", 8.0, 4.0, "Annual Discount", "https://obsidian.md", "Private, local-first markdown note-taking with plugins."),
-    ("Tana", "Productivity", 14.0, 0.0, "Free Trial", "https://tana.inc", "Supertag-based outliner for knowledge management."),
-
-    # Analytics
-    ("Fathom Analytics", "Analytics", 14.0, 0.0, "Free Trial", "https://usefathom.com", "Privacy-first, GDPR-compliant website analytics."),
-    ("Plausible Analytics", "Analytics", 9.0, 0.0, "Free Trial", "https://plausible.io", "Lightweight, open-source privacy-focused web analytics."),
-    ("Heap", "Analytics", 0.0, 0.0, "Free Trial", "https://heap.io", "Auto-capture every user interaction for product analytics."),
-    ("Hotjar", "Analytics", 32.0, 0.0, "Free Trial", "https://hotjar.com", "Heatmaps, session recordings, and user surveys."),
-    ("PostHog", "Analytics", 0.0, 0.0, "Free Trial", "https://posthog.com", "Open-source product analytics and feature flags."),
-    ("Mixpanel", "Analytics", 28.0, 0.0, "Free Trial", "https://mixpanel.com", "Event-based product analytics for growth teams."),
-
-    # Design
-    ("Canva", "Design", 15.0, 0.0, "Free Trial", "https://canva.com", "Drag-and-drop graphic design for non-designers."),
-    ("Framer", "Design", 20.0, 0.0, "Free Trial", "https://framer.com", "Design and publish high-performance websites visually."),
-    ("Loom", "Design", 15.0, 0.0, "Free Trial", "https://loom.com", "Async video messaging for teams and client walkthroughs."),
-    ("Cleanshot X", "Design", 29.0, 19.0, "Lifetime Deal", "https://cleanshot.com", "Screenshot and screen recording app for Mac."),
-
-    # Security
-    ("1Password", "Security", 7.99, 0.0, "Free Trial", "https://1password.com", "Password manager and secure vault for teams."),
-    ("Bitwarden", "Security", 3.0, 0.0, "Free Trial", "https://bitwarden.com", "Open-source password manager with end-to-end encryption."),
-    ("NordVPN", "Security", 11.99, 3.99, "Annual Discount", "https://nordvpn.com", "Fast, secure VPN with 5500+ servers in 60 countries."),
-
-    # Finance
-    ("Lemon Squeezy", "Finance", 0.0, 0.0, "Free Trial", "https://lemonsqueezy.com", "Merchant of record for SaaS — handles tax, billing, payouts."),
-    ("Paddle", "Finance", 0.0, 0.0, "Free Trial", "https://paddle.com", "Subscription billing and revenue management for B2B SaaS."),
-    ("Invoice Ninja", "Finance", 14.0, 0.0, "Free Trial", "https://invoiceninja.com", "Open-source invoicing, billing, and time-tracking."),
+    # ── Free Trials (tools with generous free tiers worth promoting) ─────────
+    ("Beehiiv", "Marketing", 42.0, 0.0, "Free Trial", "https://beehiiv.com", "Newsletter platform with built-in ad network and growth tools. Free up to 2,500 subs."),
+    ("Supabase", "DevTools", 25.0, 0.0, "Free Trial", "https://supabase.com", "Open-source Firebase alternative with Postgres, auth, storage, and real-time."),
+    ("PostHog", "Analytics", 0.0, 0.0, "Free Trial", "https://posthog.com", "Open-source product analytics with feature flags and session recordings. 1M events free."),
+    ("Plausible Analytics", "Analytics", 9.0, 0.0, "Free Trial", "https://plausible.io", "Lightweight, privacy-first web analytics. No cookies, GDPR compliant, 30-day trial."),
+    ("Fathom Analytics", "Analytics", 14.0, 0.0, "Free Trial", "https://usefathom.com", "Simple, privacy-respecting website analytics. GDPR compliant, 7-day free trial."),
+    ("Lemon Squeezy", "Finance", 0.0, 0.0, "Free Trial", "https://lemonsqueezy.com", "Merchant of record for SaaS — handles global tax, subscriptions, and payouts. Free to start."),
 ]
 
 
