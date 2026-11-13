@@ -1,15 +1,62 @@
 """SaasScout API — aggregated SaaS deals, lifetime offers, and price drops."""
 
 import json
+import sqlite3
+import time
+from datetime import date, datetime, timezone
 from pathlib import Path
 from typing import Optional
 
-from fastapi import FastAPI, Query, HTTPException
+from fastapi import FastAPI, Query, HTTPException, Request
 from fastapi.middleware.cors import CORSMiddleware
-from fastapi.responses import HTMLResponse, PlainTextResponse
+from fastapi.responses import HTMLResponse, JSONResponse, PlainTextResponse
 from pydantic import BaseModel
 
 DATA_FILE = Path(__file__).parent / "data" / "latest_deals.json"
+STATS_DB  = Path(__file__).parent / "data" / "stats.db"
+
+
+# ---------------------------------------------------------------------------
+# Stats / request counter (SQLite — survives across requests, resets on restart)
+# ---------------------------------------------------------------------------
+
+def _init_stats_db() -> sqlite3.Connection:
+    STATS_DB.parent.mkdir(exist_ok=True)
+    conn = sqlite3.connect(str(STATS_DB), check_same_thread=False)
+    conn.execute("PRAGMA journal_mode=WAL")
+    conn.execute("""
+        CREATE TABLE IF NOT EXISTS hits (
+            day      TEXT NOT NULL,
+            endpoint TEXT NOT NULL,
+            hits     INTEGER NOT NULL DEFAULT 0,
+            PRIMARY KEY (day, endpoint)
+        )
+    """)
+    conn.commit()
+    return conn
+
+
+_stats_conn = _init_stats_db()
+_server_start = datetime.now(timezone.utc).isoformat()
+
+
+def _record_hit(path: str) -> None:
+    # Normalise dynamic segments so /v1/deals/abc and /v1/deals/xyz group together
+    parts = path.split("/")
+    if len(parts) >= 4 and parts[1] == "v1" and parts[2] == "deals" and parts[3]:
+        endpoint = "/v1/deals/{id}"
+    else:
+        endpoint = path.rstrip("/") or "/"
+    today = date.today().isoformat()
+    try:
+        _stats_conn.execute(
+            "INSERT INTO hits(day, endpoint, hits) VALUES(?,?,1) "
+            "ON CONFLICT(day, endpoint) DO UPDATE SET hits = hits + 1",
+            (today, endpoint),
+        )
+        _stats_conn.commit()
+    except sqlite3.Error:
+        pass
 
 app = FastAPI(
     title="SaasScout — SaaS Deals & Lifetime Deal Tracker",
@@ -30,6 +77,13 @@ app.add_middleware(
     allow_methods=["GET"],
     allow_headers=["*"],
 )
+
+
+@app.middleware("http")
+async def stats_middleware(request: Request, call_next):
+    if not request.url.path.startswith("/stats"):
+        _record_hit(request.url.path)
+    return await call_next(request)
 
 
 DEAL_TYPE_MAP = {
@@ -428,3 +482,32 @@ def search_deals(
     ]
     results.sort(key=lambda d: d["discount_percent"], reverse=True)
     return results[:limit]
+
+
+@app.get("/stats", tags=["System"])
+def stats(days: int = Query(30, ge=1, le=90, description="Number of past days to include")):
+    """Request stats by endpoint and day. Resets on server restart (ephemeral disk)."""
+    rows = _stats_conn.execute(
+        "SELECT day, endpoint, hits FROM hits "
+        "WHERE day >= date('now', ? || ' days') "
+        "ORDER BY day DESC, hits DESC",
+        (f"-{days}",),
+    ).fetchall()
+
+    by_day: dict = {}
+    by_endpoint: dict = {}
+    grand_total = 0
+    for day, endpoint, hits in rows:
+        by_day.setdefault(day, {"total": 0, "endpoints": {}})
+        by_day[day]["total"] += hits
+        by_day[day]["endpoints"][endpoint] = by_day[day]["endpoints"].get(endpoint, 0) + hits
+        by_endpoint[endpoint] = by_endpoint.get(endpoint, 0) + hits
+        grand_total += hits
+
+    return JSONResponse({
+        "note": "Stats reset on server cold-start (Render free tier — ephemeral disk)",
+        "server_started_at": _server_start,
+        "total_hits": grand_total,
+        "by_endpoint": dict(sorted(by_endpoint.items(), key=lambda x: -x[1])),
+        "by_day": by_day,
+    })
