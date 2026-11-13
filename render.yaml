@@ -10,3 +10,7 @@ services:
       - key: PARTNER_ID
         value: ""
     autoDeploy: true
+    disk:
+      name: saasscout-stats
+      mountPath: /mnt/stats
+      sizeGB: 1

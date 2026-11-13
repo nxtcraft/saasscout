@@ -13,7 +13,8 @@ from fastapi.responses import HTMLResponse, JSONResponse, PlainTextResponse
 from pydantic import BaseModel
 
 DATA_FILE = Path(__file__).parent / "data" / "latest_deals.json"
-STATS_DB  = Path(__file__).parent / "data" / "stats.db"
+# /mnt/stats is the Render persistent disk — survives restarts and deploys
+STATS_DB  = Path("/mnt/stats/stats.db")
 
 
 # ---------------------------------------------------------------------------
@@ -505,7 +506,7 @@ def stats(days: int = Query(30, ge=1, le=90, description="Number of past days to
         grand_total += hits
 
     return JSONResponse({
-        "note": "Stats reset on server cold-start (Render free tier — ephemeral disk)",
+        "note": "Stats stored on Render persistent disk (/mnt/stats) — survives restarts and deploys",
         "server_started_at": _server_start,
         "total_hits": grand_total,
         "by_endpoint": dict(sorted(by_endpoint.items(), key=lambda x: -x[1])),
